@@ -24,7 +24,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SortPipe } from './pipes/sort.pipe';
 import { HeroesCardComponent } from './components/heroes/heroes-card/heroes-card.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-
+// Tree shaking 
+// 
 @NgModule({
   declarations: [
     AppComponent,

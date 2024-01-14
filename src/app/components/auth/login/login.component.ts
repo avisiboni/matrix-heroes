@@ -5,10 +5,12 @@ import { Router } from '@angular/router';
 import { catchError, finalize, map, of, tap } from 'rxjs';
 import { NotificationService } from 'src/app/services/notification.service';
 
+// Create independet module 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent {
 

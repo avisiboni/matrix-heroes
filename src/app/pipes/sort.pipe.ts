@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from "@angular/core";
 import { get } from 'object-path';
 
 @Pipe({
-    name: 'sort'
+    name: 'sort',
+    pure: true
 })
 export class SortPipe implements PipeTransform {
     transform<T>(array: Array<T>, path?: string): Array<T> {

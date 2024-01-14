@@ -5,9 +5,10 @@ import { Observable, delay, of, throwError } from 'rxjs';
 import { AuthService } from './auth.service';
 import { NotificationService} from './notification.service';
 @Injectable({
-    providedIn: 'root',
+    providedIn: 'root' ,
 })
 export class HeroesService {
+  
     constructor(private authService: AuthService, private notificationService: NotificationService) {}
 
     public addCard(card: Omit<IHero, 'id'>): Observable<IHero> {
@@ -58,15 +59,17 @@ export class HeroesService {
         return of(heroesCards.filter(({ trainerId }) => trainerId === user!.id)).pipe(delay(1000));
     }
 
+    // Instead of manuall formatting, use Angular date format  
     private getDateString(date: Date | string): string {
       date = new Date(date);
       return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
     }
 
+    // In order to simulate it, make it as async with Promise or use Obsrvable (with of)
     private getHeroes(): IHero[] {
       return JSON.parse(localStorage.getItem('heroesCards') || '[]') as IHero[];
     }
-
+    // Same as get
     private setHeroes(heroes: IHero[]): void {
       localStorage.setItem('heroesCards', JSON.stringify(heroes));
     }

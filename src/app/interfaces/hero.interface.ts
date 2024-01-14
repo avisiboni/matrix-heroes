@@ -14,3 +14,30 @@ export interface IHero {
   trainerId: string;
   trainings: Date[]
 }
+
+// Merging decleration 
+export interface IHero {
+  age:number;
+}
+
+export class Hero {}
+export abstract class Hero{
+  // Desginate to init a light path 
+  constructor(){}
+  kickEveils (){}
+
+}
+
+
+
+
+export class implements HeroInterior { 
+override   kickEveils (){
+
+}
+
+}
+
+
+
+

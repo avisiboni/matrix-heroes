@@ -21,6 +21,7 @@ export class AuthService {
     }
 
     getUser(): IUser | undefined {
+        // You can also grab user from this.user (if the user is connected)
         const user = localStorage.getItem('currentUser');
         if (!user) {
             return;
@@ -46,6 +47,7 @@ export class AuthService {
 
     signUp(userData: Omit<IUser, 'id'>): Observable<{success: boolean}> {
         const users: IUser[] = this.getUsers();
+        
         const alreadyExists = users.some((user: IUser) =>
             user.email === userData.email);
 

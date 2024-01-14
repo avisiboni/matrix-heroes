@@ -14,6 +14,7 @@ function userLoginGuard(): boolean {
   return true
 }
 
+// Make the route lazied with lazy loading (with Angular 16 no need for module, you can declear the component as standalone)
 const routes: Routes = [
   { path: '', redirectTo: '/heroes', pathMatch: 'full' },
   { path: 'heroes', component: HeroesComponent, canActivate: [userLoginGuard] },
